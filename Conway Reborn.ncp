@@ -1,0 +1,167 @@
+<Project>
+  <Name>Conway Reborn</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Diagram</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Conway</Name>
+        <Access>Public</Access>
+        <Location left="747" top="269" />
+        <Size width="220" height="267" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private GraphicsDeviceManager _graphics</Member>
+        <Member type="Field">private SpriteBatch _spriteBatch</Member>
+        <Member type="Field">private Gameboard _gameboard</Member>
+        <Member type="Field">private List&lt;Cell&gt; _aliveCells</Member>
+        <Member type="Field">private Vector2 _cameraPosition</Member>
+        <Member type="Field">private StopWatch DeltaTime</Member>
+        <Member type="Constructor">public Conway()</Member>
+        <Member type="Method">protected override void Initialize()</Member>
+        <Member type="Method">protected override void LoadContent()</Member>
+        <Member type="Method">protected override void Update()</Member>
+        <Member type="Method">protected override void Draw()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Cell</Name>
+        <Access>Public</Access>
+        <Location left="1061" top="269" />
+        <Size width="334" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Gameboard _gameboard</Member>
+        <Member type="Field">public Vector2 Position</Member>
+        <Member type="Constructor">public Cell(Gameboard gameboard, Vector2 position, Cell[][] array)</Member>
+        <Member type="Method">public Vector2[] getSurroundingPositions()</Member>
+        <Member type="Method">public Cell[] getAliveNeighbours()</Member>
+        <Member type="Method">public Cell[] getNeighbours()</Member>
+        <Member type="Method">public void kill()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Gameboard</Name>
+        <Access>Public</Access>
+        <Location left="283" top="269" />
+        <Size width="359" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Texture2D _cellTexture</Member>
+        <Member type="Field">public Texture2D CellTexture</Member>
+        <Member type="Field">private GraphicsDevice _graphicsDevice</Member>
+        <Member type="Field">private int _cellScale</Member>
+        <Member type="Field">public int CellScale</Member>
+        <Member type="Field">private List&lt;Cell&gt; _aliveCells</Member>
+        <Member type="Field">private Cell[][] _board</Member>
+        <Member type="Method">public void addCell(Vector2 position)</Member>
+        <Member type="Method">public void removeCell(Vector2 position)</Member>
+        <Member type="Method">public Cell getCell(Vector2 position)</Member>
+        <Member type="Constructor">public Gameboard(GraphicsDevice graphicsDevice, List&lt;Cell&gt; aliveCell)</Member>
+        <Member type="Method">public Vector2[] getSurroundings(Vector2 position)</Member>
+        <Member type="Method">private void refreshTextures()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Entry point for program:</Text>
+        <Location left="747" top="172" />
+        <Size width="188" height="50" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Comment" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>783</X>
+          <Y>259</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>783</X>
+          <Y>235</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>717</X>
+          <Y>299</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>722</X>
+          <Y>332</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>992</X>
+          <Y>295</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>599</X>
+          <Y>618</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1111</X>
+          <Y>618</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1161</X>
+          <Y>661</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>550</X>
+          <Y>661</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>585</X>
+          <Y>633</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1130</X>
+          <Y>633</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
